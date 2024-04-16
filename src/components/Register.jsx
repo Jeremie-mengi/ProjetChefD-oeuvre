@@ -16,7 +16,7 @@ function Register() {
     const onSubmit = (data) => {
         console.log(data);
         alert(`${data.nom} a été enregistré`);
-        reset(); 
+        reset();
     };
 
     return (
@@ -36,30 +36,30 @@ function Register() {
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Adresse email</label>
-                    <input type="text" id="email" name="email" className="myInput" {...register("adresseEmail",{pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, required: true })} />
+                    <input type="text" id="email" name="email" className="myInput" {...register("adresseEmail", { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, required: true })} />
                     {errors.adresseEmail && <span style={{ color: "red" }}>Ce champ est obligatoire</span>}
                     {errors.adresseEmail && errors.adresseEmail.type === "pattern" && <span style={{ color: "red" }}>Veuillez saisir une adresse email valide</span>}
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" className="myInput" {...register("motdepasse", {  pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/, required: true })} />
+                    <input type="password" id="password" name="password" className="myInput" {...register("motdepasse", { pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/, required: true })} />
                     {errors.motdepasse && <span style={{ color: "red" }}>Ce champ est obligatoire</span>}
                     {errors.motdepasse && errors.motdepasse.type === "pattern" && <span style={{ color: "red" }}>Le mot de passe doit contenir au moins 8 caractères, une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial</span>}
                 </div>
-                
+
                 <div className="form-group">
                     <label htmlFor="telephone">Numero de téléphone</label>
                     <input type="text" id="telephone" name="telephone" className="myInput" {...register("numerodetelephone", { pattern: /^[0-9]{10}$/i, required: true })} />
                     {errors.numerodetelephone && <span style={{ color: "red" }}>Ce champ est obligatoire et doit contenir exactement 10 chiffres</span>}
                 </div>
-                 
+
                 <div>
                     <button className="btnRegister" type="submit">S'inscrire</button>
                 </div>
 
                 <div className='mytextCount'>
                     <p className='textCnnecte'>Vous avez un compte?</p>
-                    <p><Link  to="/Login" className='mylink'>Se connecter</Link></p>
+                    <p><Link to="/Login" className='mylink'>Se connecter</Link></p>
                 </div>
             </form>
         </section>
