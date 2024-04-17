@@ -21,7 +21,7 @@ function Login() {
     return (
         <section className="myBody">
             <form className="myForm" onSubmit={handleSubmit(onSubmit)}>
-                <h1>BIENVENUE</h1>
+                <h1 className='myTitle'>BIENVENUE</h1>
                 <div className="form-group">
                     <label htmlFor="email">Adresse email</label>
                     <input type="text" id="email" name="email" className="myInput" {...register("adresseEmail", { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, required: true })} />
@@ -39,13 +39,13 @@ function Login() {
                     <label htmlFor="check" className="labelText">Se souvenir de moi</label>
                 </div>
 
-                <div>
+                <div  className='form-btn'>
                     <button className="btnRegister" type="submit">Se connecter</button>
                 </div>
 
                 <div className='mytextCount'>
-                    <p className='textCnnecte'><a href='#' className='mylink'>Mot de passe oublié?</a></p>
-                    <p><Link to='/' className='mylink'>Creer un compte?</Link></p>
+                    <p className='textCnnecte'><Link to='/ForgotPass' className='mylink'>Mot de passe oublié?</Link></p>
+                    <p><Link to='/' className='mylink'>Creer un compte</Link></p>
                 </div>
             </form>
         </section>

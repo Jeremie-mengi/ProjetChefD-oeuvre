@@ -20,9 +20,9 @@ function Register() {
     };
 
     return (
-        <section className="myBody">
+        <section className="mySetion">
             <form className="myForm" onSubmit={handleSubmit(onSubmit)}>
-                <h1>CREER UN COMPTE</h1>
+                <h1 className='myTitle'>CREER UN COMPTE</h1>
 
                 <div className="form-group">
                     <label htmlFor="nom">Nom</label>
@@ -53,7 +53,7 @@ function Register() {
                     {errors.numerodetelephone && <span style={{ color: "red" }}>Ce champ est obligatoire et doit contenir exactement 10 chiffres</span>}
                 </div>
 
-                <div>
+                <div className='form-btn'>
                     <button className="btnRegister" type="submit">S'inscrire</button>
                 </div>
 
