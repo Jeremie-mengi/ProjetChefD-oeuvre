@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom';
-
+import schools from "../image/schools.jpg"
 function ForgotPass() {
     const [formData, setFormData] = useState({
         adresseEmail: "",
@@ -16,8 +16,8 @@ function ForgotPass() {
     };
 
     return (
-        <section className="mySetion">
-            <form className="myForm" onSubmit={handleSubmit(onSubmit)}>
+        <section className="mySetion  flex flex-row  gap-[2px]">
+            <form className="myForm  ml-[100px]" onSubmit={handleSubmit(onSubmit)}>
                 <h1 className='myTitle'>MOT DE PASSE OUBLIE</h1>
 
                 <div className="form-group">
@@ -40,11 +40,14 @@ function ForgotPass() {
                <div  className='mytextParent'>
                     <p className='textCnnecte'><Link to="/">Creer un compte</Link></p>
                     <div className='mytextCount'>
-                    <p className='textCnnecte'><Link to='/ForgotPass' className='mylink'>Vous avez un compte?</Link></p>
+                    <p className='textCnnecte'>Vous avez un compte?</p>
                     <p><Link to='/' className='mylink'>Se connecter</Link></p>
                    </div>
                 </div>
             </form>
+            <div className="mt-[-3px]  mr-[100px] ">
+                    <img src={schools} alt="" className='h-[397px] w-[700px] rounded-[16px] '  />
+            </div>
         </section>
     )
 }

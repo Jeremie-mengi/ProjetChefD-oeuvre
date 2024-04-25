@@ -110,7 +110,6 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
 }
 
 .mytextCount p {
@@ -155,13 +154,15 @@ label {
     font-weight: weight;
     font-style: normal;
 }
+.myJoin{
+    text-align: center;
+}
 
 body {
     background-color: #F6F6F6;
 }
 
 .myTitle {
-    font-family: ;
     color: #000000;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;

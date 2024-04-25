@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom';
+import schools from "../image/schools.jpg"
 
 function Register() {
     const [formData, setFormData] = useState({
@@ -20,8 +21,8 @@ function Register() {
     };
 
     return (
-        <section className="mySetion">
-            <form className="myForm" onSubmit={handleSubmit(onSubmit)}>
+        <section className="mySetion  flex flex-row  gap-[2px] ">
+            <form className="myForm ml-[100px] " onSubmit={handleSubmit(onSubmit)}>
                 <h1 className='myTitle'>CREER UN COMPTE</h1>
 
                 <div className="form-group">
@@ -62,8 +63,16 @@ function Register() {
                     <p><Link to="/Login" className='mylink'>Se connecter</Link></p>
                 </div>
             </form>
+
+            <div className="mt-[-3px]  mr-[100px] ">
+                    <img src={schools} alt="" className='h-[648px] w-[700px] rounded-[16px] '  />
+            </div>
         </section>
     )
 }
 
 export default Register
+
+
+
+

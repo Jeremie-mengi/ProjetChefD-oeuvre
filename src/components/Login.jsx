@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom';
+import schools from "../image/schools.jpg"
 
 function Login() {
     const [formData, setFormData] = useState({
@@ -19,8 +20,8 @@ function Login() {
     };
 
     return (
-        <section className="myBody">
-            <form className="myForm" onSubmit={handleSubmit(onSubmit)}>
+        <section className="myBody   flex flex-row  gap-[2px]">
+            <form className="myForm  ml-[100px]" onSubmit={handleSubmit(onSubmit)}>
                 <h1 className='myTitle'>BIENVENUE</h1>
                 <div className="form-group">
                     <label htmlFor="email">Adresse email</label>
@@ -48,6 +49,9 @@ function Login() {
                     <p><Link to='/' className='mylink'>Creer un compte</Link></p>
                 </div>
             </form>
+            <div className="mt-[-3px]  mr-[100px] ">
+                    <img src={schools} alt="" className='h-[420px] w-[700px] rounded-[16px] '  />
+            </div>
         </section>
     )
 }

@@ -6,6 +6,7 @@ import './index.css'
 import Register from './components/Register.jsx'
 import Login from './components/Login.jsx'
 import ForgotPass from './components/ForgotPass.jsx'
+import Home from './components/Home.jsx'
 
 
 const router = createBrowserRouter(
@@ -16,7 +17,7 @@ const router = createBrowserRouter(
       children: [
         {
           path: "/",
-          element: <Register/>,
+          element:<Home/>,
         },
         {
           path:"/Login",
@@ -25,7 +26,12 @@ const router = createBrowserRouter(
         {
           path:"/ForgotPass",
           element: <ForgotPass/>, 
+        }, 
+        {
+          path:"/Register",
+          element: <Register/>, 
         }
+        
         
     ],
        
