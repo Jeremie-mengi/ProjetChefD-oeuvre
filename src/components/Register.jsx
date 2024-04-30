@@ -65,7 +65,7 @@ function Register() {
             </form>
 
             <div className="mt-[-3px]  mr-[100px] ">
-                    <img src={schools} alt="" className='h-[648px] w-[700px] rounded-[16px] '  />
+                <img src={schools} alt="" className='h-[648px] w-[700px] rounded-[16px] ' />
             </div>
         </section>
     )

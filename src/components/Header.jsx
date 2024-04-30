@@ -78,7 +78,7 @@ function Header() {
 
                         <div className="flex items-center gap-[30px]">
                             <span className="mr-6 relative" onMouseEnter={() => handleMouseEnter('langue')} onMouseLeave={() => handleMouseLeave('langue')}>
-                                <a href="" className="hover:text-gray-300 pl-[10px]">Langue</a>
+                             <a href="" className="hover:text-gray-300 pl-[10px]">Langue</a>
                                 {showMenu.langue && (
                                     <ul className="absolute top-full left-0 bg-white border border-gray-200 py-[15px] px-[25px] gap-[10px] flex flex-col">
                                         <li><a href="#">Français</a></li>
