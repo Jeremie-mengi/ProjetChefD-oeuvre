@@ -1,0 +1,100 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model User {
+ id_Us Int @id @default(autoincrement())
+ nom String
+ postnom String
+ email String @unique
+ password String 
+ telephone Int @unique
+ roles Role []
+}
+model Role {
+ id_rol Int @id @default(autoincrement())
+ description String
+ userId Int
+ users User @relation (fields: [userId], references: [id_Us])
+}
+model Eleve {
+  id_El Int @id @default(autoincrement())
+  nom String
+  postnom String
+  prenom String
+  sexe String 
+  adresse String
+  email String  @unique
+  telephone Int @unique
+  classe String
+  tutId Int
+  tuteurs Tuteur @relation (fields: [tutId], references: [id_Tut])
+}
+model Tuteur {
+  id_Tut Int @id @default(autoincrement())
+  nom String
+  postnom String
+  prenom String
+  sexe String 
+  adresse String
+  email String  @unique
+  telephone Int @unique
+  eleves Eleve []
+  notifications Notification []
+ 
+}
+model Notification{
+  id_Not Int @id @default(autoincrement())
+  message String
+  date_envoie DateTime
+  tutId Int
+  tuteurs Tuteur @relation (fields: [tutId], references: [id_Tut])
+  caisId Int
+  caissiers Caissier @relation (fields: [caisId], references: [id_Cais])
+}
+model Caissier {
+  id_Cais Int @id @default(autoincrement())
+  nom String
+  postnom String
+  prenom String
+  sexe String 
+  adresse String
+  email String  @unique
+  telephone Int @unique
+  notifications Notification []
+  paiements Paiement[]
+ 
+}
+model Paiement {
+  id_Pai Int @id @default(autoincrement())
+  montantapaye Int
+  montantpaye Int
+  Datedepaiement DateTime
+  caisId Int
+  caissiers Caissier @relation (fields: [caisId], references: [id_Cais])
+  fraiId Int
+  frais Frais @relation (fields: [fraiId], references: [id_Frai])
+}
+model Frais {
+  id_Frai Int @id @default(autoincrement())
+  libelle String
+  montantFrais Int
+  DateLimite DateTime
+  paiements Paiement[]
+}
+
+
+
+
+
+
