@@ -9,6 +9,7 @@
     margin: 100px auto;
     background-color: #FFFFFF;
     border-radius: 16px;
+  
 }
 section {
     min-height: 100vh;/* Utilisation de min-height pour garantir que la section occupe au moins toute la hauteur de la fenêtre visible */
@@ -53,6 +54,12 @@ label {
     font-weight: weight;
     font-style: normal;
 }
+.myH {
+  width: 60px;
+  border: none; /* Supprime le bord */
+  background-color: white; /* Couleur de la ligne */
+  height: 1px; /* Épaisseur de la ligne */
+}
 
 .form-btn{
     width: 100%;
@@ -62,6 +69,17 @@ label {
     background-color: #6557FF;
 }
 
+.myInput1 {
+    border-radius: 16px;
+    font-size: 18px;
+    width:40%;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    background-color: #000000;
+
+}
 .myInput {
     border-radius: 16px;
     font-size: 18px;
@@ -169,22 +187,35 @@ body {
     font-style: normal;
     font-size: 30px;
 }
-.mySectionDash{
-    background-color: white;
+.myTitlePaie{
+    color: #000000;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+}
+.mySectionDash {
+    background-image: url("image/image.jpg");
     height: 100%;
     display: flex;
     gap: 30px;
     flex-direction: row;
+    
 }
 
-.bloc1{
+.bloc1 {
     background-color: #000000;
     border: 1px solid black;
-    height: 1;;
-
+    height: 100%; /* Prendre toute la hauteur disponible du parent */
+    flex: 0 0 auto; /* Ne pas grandir, ne pas rétrécir, taille automatique */
+    width: 400px; /* Définissez la largeur souhaitée */
 }
-.bloc2{
 
+.bloc2 {
+    height: 100%; /* Prendre toute la hauteur disponible du parent */
+    flex: 1; /* Utiliser tout l'espace disponible en largeur */
+    /* Ajoutez les styles appropriés pour le bloc2 selon vos besoins */
 }
 
 @media screen and (max-width: 768px) {
