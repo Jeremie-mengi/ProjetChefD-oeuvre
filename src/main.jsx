@@ -7,6 +7,7 @@ import Register from './components/Register.jsx'
 import Login from './components/Login.jsx'
 import ForgotPass from './components/ForgotPass.jsx'
 import Home from './components/Home.jsx'
+import Dashbord from './components/Dashbord.jsx'
 
 
 const router = createBrowserRouter(
@@ -20,19 +21,21 @@ const router = createBrowserRouter(
           element:<Home/>,
         },
         {
-          path:"/Login",
+          path:"/login",
           element: <Login/>, 
         },
         {
-          path:"/ForgotPass",
+          path:"/forgotPass",
           element: <ForgotPass/>, 
         }, 
         {
-          path:"/Register",
+          path:"/register",
           element: <Register/>, 
-        }
-        
-        
+        },
+        {
+          path:"/dash",
+          element: <Dashbord/>, 
+        }        
     ],
        
     },

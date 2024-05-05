@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom';
 import schools from "../image/schools.jpg"
+import axios from 'axios';
 
 function Login() {
     const [formData, setFormData] = useState({
@@ -13,10 +14,25 @@ function Login() {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm({ defaultValues: formData })
 
-    const onSubmit = (data) => {
-        console.log(data);
-        alert(` Connecté avec succés`);
-        reset();
+    const onSubmit = async (data) => {
+        try {
+            const res = await axios.post("http://localhost:3009/login", {
+                email: data.adresseEmail,
+                password: data.motdepasse
+            });
+            if (res.status === 200) {
+                localStorage.setItem('tokenUser', JSON.stringify(res.data));
+                alert('User connecté avec succès')
+                reset();
+                window.location.href = "/dash"
+              
+            }
+        } catch (error) {
+            console.log(error && error.response);
+            const err = error && error.response &&
+                error.response.data && error.response.data.message;
+            alert(err);
+        }
     };
 
     return (
@@ -40,7 +56,7 @@ function Login() {
                     <label htmlFor="check" className="labelText">Se souvenir de moi</label>
                 </div>
 
-                <div  className='form-btn'>
+                <div className='form-btn'>
                     <button className="btnRegister" type="submit">Se connecter</button>
                 </div>
 
@@ -50,7 +66,7 @@ function Login() {
                 </div>
             </form>
             <div className="mt-[-3px]  mr-[100px] ">
-                    <img src={schools} alt="" className='h-[420px] w-[700px] rounded-[16px] '  />
+                <img src={schools} alt="" className='h-[420px] w-[700px] rounded-[16px] ' />
             </div>
         </section>
     )

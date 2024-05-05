@@ -169,6 +169,23 @@ body {
     font-style: normal;
     font-size: 30px;
 }
+.mySectionDash{
+    background-color: white;
+    height: 100%;
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+}
+
+.bloc1{
+    background-color: #000000;
+    border: 1px solid black;
+    height: 1;;
+
+}
+.bloc2{
+
+}
 
 @media screen and (max-width: 768px) {
     .myForm {

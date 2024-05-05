@@ -2,23 +2,30 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom';
 import schools from "../image/schools.jpg"
-
+import axios from "axios"
 function Register() {
     const [formData, setFormData] = useState({
         nom: "",
         postnom: "",
-        adresseEmail: "",
-        motdepasse: "",
-        numerodetelephone: "",
+        email: "",
+        password: "",
+        telephone: "",
     })
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm({ defaultValues: formData })
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = async (data) => {
+    
+try {
+    
+    const res = await axios.post("http://localhost:3009/user", data)
+    console.log(res);
+    window.location.href = "/login"
+} catch (error) {
+    console.log(error);
+}
         alert(`${data.nom} a été enregistré`);
-        reset();
-    };
+};
 
     return (
         <section className="mySetion  flex flex-row  gap-[2px] ">
@@ -37,20 +44,20 @@ function Register() {
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Adresse email</label>
-                    <input type="text" id="email" name="email" className="myInput" {...register("adresseEmail", { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, required: true })} />
+                    <input type="text" id="email" name="email" className="myInput" {...register("email", { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, required: true })} />
                     {errors.adresseEmail && <span style={{ color: "red" }}>Ce champ est obligatoire</span>}
                     {errors.adresseEmail && errors.adresseEmail.type === "pattern" && <span style={{ color: "red" }}>Veuillez saisir une adresse email valide</span>}
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" className="myInput" {...register("motdepasse", { pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/, required: true })} />
+                    <input type="password" id="password" name="password" className="myInput" {...register("password", { pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/, required: true })} />
                     {errors.motdepasse && <span style={{ color: "red" }}>Ce champ est obligatoire</span>}
                     {errors.motdepasse && errors.motdepasse.type === "pattern" && <span style={{ color: "red" }}>Le mot de passe doit contenir au moins 8 caractères, une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial</span>}
                 </div>
 
                 <div className="form-group">
                     <label htmlFor="telephone">Numero de téléphone</label>
-                    <input type="text" id="telephone" name="telephone" className="myInput" {...register("numerodetelephone", { pattern: /^[0-9]{10}$/i, required: true })} />
+                    <input type="text" id="telephone" name="telephone" className="myInput" {...register("telephone", { pattern: /^[0-9]{10}$/i, required: true })} />
                     {errors.numerodetelephone && <span style={{ color: "red" }}>Ce champ est obligatoire et doit contenir exactement 10 chiffres</span>}
                 </div>
 
