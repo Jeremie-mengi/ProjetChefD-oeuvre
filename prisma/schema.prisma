@@ -51,6 +51,7 @@ model Tuteur {
   telephone Int @unique
   eleves Eleve []
   notifications Notification []
+  paiements Paiement[]
  
 }
 model Notification{
@@ -80,6 +81,8 @@ model Paiement {
   montantapaye Int
   montantpaye Int
   Datedepaiement DateTime
+  tutId Int
+  tuteurs Tuteur @relation (fields: [tutId], references: [id_Tut])
   caisId Int
   caissiers Caissier @relation (fields: [caisId], references: [id_Cais])
   fraiId Int
@@ -87,7 +90,7 @@ model Paiement {
 }
 model Frais {
   id_Frai Int @id @default(autoincrement())
-  libelle String
+  libelle String 
   montantFrais Int
   DateLimite DateTime
   paiements Paiement[]
