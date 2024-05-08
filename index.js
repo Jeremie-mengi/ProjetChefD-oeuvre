@@ -38,10 +38,4 @@ back.use("/notification", notification)
 back.use("/paiement", paiement)
 back.use("/login", login)
 
-
-
-
-
-
-
 back.listen(PORT, () => console.log(`Le serveur est en écoute sur le port ${PORT}`));
