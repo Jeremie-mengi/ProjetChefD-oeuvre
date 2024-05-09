@@ -12,6 +12,7 @@ const configPassport = require("./auth/usAuth")
 const passport = require("passport");
 const paiement = require("./routes/paiement");
 const cors = require("cors")
+
 passport.use(configPassport)
 dotenv.config()
 const PORT = process.env.PORT;
