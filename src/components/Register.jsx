@@ -19,12 +19,12 @@ function Register() {
 try {
     
     const res = await axios.post("http://localhost:3009/user", data)
-    console.log(res);
-    window.location.href = "/login"
+  
 } catch (error) {
     console.log(error);
 }
         alert(`${data.nom} a été enregistré`);
+        window.location.href = "/login"
 };
 
     return (

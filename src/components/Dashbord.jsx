@@ -7,13 +7,12 @@ function Dashbord(params) {
         NomdeEleve: "",
         PostnomdeEleve: "",
         PrenomdeEleve: "",
-        classe : "",
-
+        classe: "",
     });
 
     const onSubmit = (data) => {
         console.log(data);
-        alert(`Paiement enregistré avec succes`);
+        alert(`Paiement enregistré avec succès`);
         reset();
     };
 
@@ -25,43 +24,40 @@ function Dashbord(params) {
                 <form className="myForm" onSubmit={handleSubmit(onSubmit)}>
                     <h1 className='myTitlePaie'>Formulaire de paiement de frais </h1>
                     <div className="form-group">
-                        <label htmlFor="email">Matricule eleve</label>
-                        <input type="text" id="email" name="email" className="myInput" {...register("Matriculeeleve", { required: true })} />
+                        <label htmlFor="Matriculeeleve">Matricule eleve</label>
+                        <input type="text" id="Matriculeeleve" name="Matriculeeleve" className="myInput" {...register("Matriculeeleve", { required: true })} />
                         {errors.Matriculeeleve && <span style={{ color: "red" }}>Ce champ est obligatoire</span>}
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="email">Nom de l'eleve</label>
-                        <input type="text" id="email" name="email" className="myInput" {...register("NomdeEleve", { required: true })} />
+                        <label htmlFor="NomdeEleve">Nom de l'eleve</label>
+                        <input type="text" id="NomdeEleve" name="NomdeEleve" className="myInput" {...register("NomdeEleve", { required: true })} />
                         {errors.NomdeEleve && <span style={{ color: "red" }}>Ce champ est obligatoire</span>}
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="password">Postnom de l'eleve</label>
-                        <input type="text" id="password" name="password" className="myInput" {...register("PostnomdeEleve", { required: true })} />
+                        <label htmlFor="PostnomdeEleve">Postnom de l'eleve</label>
+                        <input type="text" id="PostnomdeEleve" name="PostnomdeEleve" className="myInput" {...register("PostnomdeEleve", { required: true })} />
                         {errors.PostnomdeEleve && <span style={{ color: "red" }}>Ce champ est obligatoire</span>}
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="password">Prenom de l'eleve</label>
-                        <input type="text" id="password" name="password" className="myInput" {...register("PrenomdeEleve", { required: true })} />
+                        <label htmlFor="PrenomdeEleve">Prenom de l'eleve</label>
+                        <input type="text" id="PrenomdeEleve" name="PrenomdeEleve" className="myInput" {...register("PrenomdeEleve", { required: true })} />
                         {errors.PrenomdeEleve && <span style={{ color: "red" }}>Ce champ est obligatoire</span>}
                     </div>
 
-                    <select className="form-group">
-                        <option htmlFor="password">Classe</option>
-                        <option htmlFor="password">Classe</option>
-                        <option htmlFor="password">Classe</option>
-                    </select>
-                    
                     <div className="form-group">
-                        <label htmlFor="password">Classe</label>
-                        <input type="text" id="password" name="password" className="myInput" {...register("classe", { required: true })} />
+                        <label htmlFor="classe">Classe</label>
+                        <select id="classe" name="classe" className="myInput" {...register("classe", { required: true })}>
+                            <option value="">Sélectionner une classe</option>
+                            <option value="Classe A">Classe A</option>
+                            <option value="Classe B">Classe B</option>
+                            <option value="Classe C">Classe C</option>
+                        </select>
                         {errors.classe && <span style={{ color: "red" }}>Ce champ est obligatoire</span>}
                     </div>
 
-
-                    
                     <div className='form-btn'>
                         <button className="btnRegister" type="submit">Payer</button>
                     </div>
