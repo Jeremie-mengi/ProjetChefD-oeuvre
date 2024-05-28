@@ -34,6 +34,21 @@ function Login() {
         }
     };
 
+    const axiosInstance = axios.create({
+        baseURL: 'http://localhost:3009', // Votre URL de base
+    });
+    
+    // Intercepteur pour ajouter le jeton d'authentification à chaque requête
+    axiosInstance.interceptors.request.use(config => {
+        const token = localStorage.getItem('tokenUser');
+        if (token) {
+            config.headers['Authorization'] = `Bearer ${token}`;
+        }
+        return config;
+    }, error => {
+        return Promise.reject(error);
+    });
+
     return (
         <section className="myBody   flex flex-row  gap-[2px]">
             <form className="myForm  ml-[100px]" onSubmit={handleSubmit(onSubmit)}>
