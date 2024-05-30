@@ -70,21 +70,19 @@ function Main() {
 </section>
 
     
-<section class="bg-[#F6F6F6] rounded-[10px] flex flex-col items-center py-4">
-    <div class="text-left w-full md:w-auto md:mr-[800px] mt-4  mt-[100px] mb-[400px] flex flex-col gap-2 px-4">
-        <p class="text-lg font-bold">BENEFITS</p>
-        <p class="text-2xl md:text-4xl font-bold font-[inter]">Unlocking the power of third</p>
-        <p class="text-base font-[inter] font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. At nobis nihil.</p>
+<section className="bg-[#F6F6F6] rounded-[10px] flex flex-col items-center py-4">
+    <div className="text-left w-full md:w-auto md:mr-[800px] mt-[100px] mb-[400px] ml-[50px] flex flex-col gap-2 px-4">
+        <p className="text-lg font-bold">BENEFITS</p>
+        <p className="text-2xl md:text-4xl font-bold font-[inter]">Unlocking the power of third</p>
+        <p className="text-base font-[inter] font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. At nobis nihil.</p>
     </div>
 
-    <div class="flex flex-row justify-center w-full md:w-[500px] mt-4 md:mt-[60px] gap-2 px-4">
-    <img class="w-1/3 md:w-auto" src={image1} alt="Image 1" />
-    <img class="w-1/3 md:w-auto" src={image2} alt="Image 2" />
-    <img class="w-1/3 md:w-auto" src={image3} alt="Image 3" />
-</div>
-
+    <div className="flex flex-col justify-center items-center w-full md:w-[500px] mt-4 md:mt-[60px] gap-2 px-4 h-[400px] md:h-auto">
+        <img className="w-1/3 md:w-auto" src={image1} alt="Image 1" />
+        <img className="w-1/3 md:w-auto" src={image2} alt="Image 2" />
+        <img className="w-1/3 md:w-auto" src={image3} alt="Image 3" />
+    </div>
 </section>
-
         </main>
     </div>
     
