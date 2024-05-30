@@ -71,7 +71,7 @@ function Main() {
 
     
 <section class="bg-[#F6F6F6] rounded-[10px] flex flex-col items-center py-4">
-    <div class="text-left w-full md:w-auto md:mr-[800px] mt-4 md:mt-[-130px] mb-[400px] flex flex-col gap-2 px-4">
+    <div class="text-left w-full md:w-auto md:mr-[800px] mt-4  mt-[100px] mb-[400px] flex flex-col gap-2 px-4">
         <p class="text-lg font-bold">BENEFITS</p>
         <p class="text-2xl md:text-4xl font-bold font-[inter]">Unlocking the power of third</p>
         <p class="text-base font-[inter] font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. At nobis nihil.</p>
